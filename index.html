@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Metatah - Gusti Ketut Jyesta Indrawan</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts untuk tipografi elegan -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Icon (Maps, WA, Music) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <!-- Jika nama file audio Anda berbeda, ganti "music.mp3" dengan nama file Anda -->
+    <audio id="bg-music" loop>
+        <source src="assets/Cinematic Backsound_ Kolaborasi Instrument Bali.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Halaman Sampul (Cover) -->
+    <div id="cover-page" class="cover-page">
+        <div class="cover-content">
+            <h3 class="ceremony-type">Undangan Metatah / Mepandes</h3>
+            <h1 class="names">Gusti Ketut Jyesta Indrawan</h1>
+            <p class="guest-greeting">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <!-- Nama tamu akan otomatis berubah jika link menggunakan ?to=Nama -->
+            <h2 class="guest-name" id="guest-name">Tamu Undangan</h2>
+            <br>
+            <button id="btn-open" class="btn-primary"><i class="fas fa-envelope-open-text"></i> Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- Konten Utama Undangan -->
+    <div id="main-content" class="main-content hidden">
+        
+        <!-- Bagian Pembuka (Hero) -->
+        <section class="hero-section">
+            <div class="overlay"></div>
+            <div class="hero-text">
+                <h2>Om Swastyastu</h2>
+                <p>Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan Upacara Manusa Yadnya (Metatah/Mepandes) putra kami:</p>
+                <h1 class="hero-name">Gusti Ketut Jyesta Indrawan</h1>
+                <p class="family-info">
+                    Putra ke-3 dari Pasangan:<br>
+                    <strong>I Gusti Putu Ariawan</strong><br>&<br><strong>Gusti Ayu Sri Manik</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Bagian Detail Waktu & Tempat -->
+        <section class="event-section">
+            <h2 class="section-title">Waktu & Tempat Pelaksanaan</h2>
+            
+            <div class="event-card">
+                <div class="event-icon"><i class="far fa-calendar-alt"></i></div>
+                <h3>Hari & Tanggal</h3>
+                <p><strong>Kamis, 15 Oktober 2026</strong></p>
+                <p>Pukul: 14:00 WITA - Selesai</p>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Lokasi Acara</h3>
+                <p><strong>Br. Dinas Yadnya Kerthi</strong></p>
+                <p>Desa Ularan, Kecamatan Seririt, Kabupaten Buleleng</p>
+                <a href="https://maps.app.goo.gl/f6tgpVMJWWZ8Uhuo9" target="_blank" class="btn-secondary"><i class="fas fa-map-marked-alt"></i> Buka Google Maps</a>
+            </div>
+        </section>
+
+        <!-- Bagian Hitung Mundur (Countdown) -->
+        <section class="countdown-section">
+            <h2 class="section-title">Menuju Hari Bahagia</h2>
+            <div class="countdown-container">
+                <div class="time-box">
+                    <span id="hari">00</span>
+                    <p>Hari</p>
+                </div>
+                <div class="time-box">
+                    <span id="jam">00</span>
+                    <p>Jam</p>
+                </div>
+                <div class="time-box">
+                    <span id="menit">00</span>
+                    <p>Menit</p>
+                </div>
+                <div class="time-box">
+                    <span id="detik">00</span>
+                    <p>Detik</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian RSVP (Konfirmasi Kehadiran) -->
+        <section class="rsvp-section">
+            <h2 class="section-title">Konfirmasi Kehadiran</h2>
+            <p>Kehadiran serta doa restu Bapak/Ibu/Saudara/i merupakan suatu kehormatan dan kebahagiaan bagi kami.</p>
+            <p>Mohon berkenan untuk mengonfirmasi kehadiran Anda melalui tombol WhatsApp di bawah ini:</p>
+            <a href="https://wa.me/6287862274762?text=Om%20Swastyastu,%20saya%20mengonfirmasi%20kehadiran%20pada%20acara%20Metatah%20Gusti%20Ketut%20Jyesta%20Indrawan." target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Konfirmasi via WhatsApp</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <h2>Om Santih, Santih, Santih, Om</h2>
+            <p>Kami yang berbahagia,</p>
+            <h3>Keluarga Besar I Gusti Putu Ariawan</h3>
+        </footer>
+        
+        <!-- Tombol Kontrol Musik (Muncul di pojok kanan bawah) -->
+        <button id="btn-music" class="btn-music rotating"><i class="fas fa-compact-disc"></i></button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

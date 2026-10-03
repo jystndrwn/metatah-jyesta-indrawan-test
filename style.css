@@ -1,0 +1,397 @@
+:root {
+    --primary-color: #aa8645; /* Emas Bali */
+    --secondary-color: #6a4f21; 
+    --bg-color: #fdfaf2; /* Krem terang */
+    --text-color: #333;
+    --font-heading: 'Great Vibes', cursive;
+    --font-subheading: 'Cinzel', serif;
+    --font-body: 'Lora', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: var(--font-subheading);
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   Halaman Sampul (Cover Page) 
+   ========================================================= */
+.cover-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Latar belakang cover menggunakan foto ornamen bali atau abstrak elegan */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1540827108920-53bc861cb7e5?auto=format&fit=crop&q=80') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: transform 1.2s cubic-bezier(0.86, 0, 0.07, 1), opacity 1.2s ease;
+}
+
+.cover-page.slide-up {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.cover-content {
+    text-align: center;
+    color: white;
+    padding: 40px 30px;
+    border: 2px solid var(--primary-color);
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    max-width: 90%;
+    width: 450px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.ceremony-type {
+    font-family: var(--font-subheading);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e6c883;
+}
+
+.names {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    margin: 25px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.guest-greeting {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-style: italic;
+    color: #ccc;
+}
+
+.guest-name {
+    font-family: var(--font-subheading);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+    color: white;
+}
+
+/* =========================================================
+   Tombol-Tombol (Buttons) 
+   ========================================================= */
+.btn-primary, .btn-secondary, .btn-whatsapp {
+    display: inline-block;
+    padding: 12px 28px;
+    font-family: var(--font-subheading);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(170, 134, 69, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-top: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   Konten Utama (Setelah Dibuka)
+   ========================================================= */
+.main-content {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.main-content.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* --- Hero Section (Doa/Pembukaan) --- */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://images.unsplash.com/photo-1596404874944-77884179e088?auto=format&fit=crop&q=80') center/cover;
+    color: white;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Background gelap transparan agar teks terbaca */
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero-text h2 {
+    font-family: var(--font-subheading);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.hero-name {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin: 30px 0;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.family-info {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- Event Section (Waktu & Lokasi) --- */
+.event-section {
+    background-color: white;
+    /* Pola batik tipis untuk background */
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23aa8645" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.event-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 40px 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    position: relative;
+    border-top: 5px solid var(--primary-color);
+}
+
+.event-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.event-card h3 {
+    font-family: var(--font-subheading);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.event-card p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* --- Countdown Section --- */
+.countdown-section {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.countdown-section .section-title {
+    color: #e6c883;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px 15px;
+    min-width: 90px;
+    flex: 1;
+}
+
+.time-box span {
+    font-family: var(--font-subheading);
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    color: #e6c883;
+}
+
+.time-box p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* --- RSVP Section --- */
+.rsvp-section {
+    background-color: var(--bg-color);
+}
+
+.rsvp-section p {
+    max-width: 600px;
+    margin: 0 auto 15px auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    font-family: var(--font-subheading);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.footer h3 {
+    font-family: var(--font-subheading);
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #ddd;
+}
+
+/* --- Music Control Button --- */
+.btn-music {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: none;
+    transition: background-color 0.3s;
+}
+
+.btn-music:hover {
+    background-color: var(--secondary-color);
+}
+
+.rotating {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .names {
+        font-size: 2.5rem;
+    }
+    .hero-name {
+        font-size: 3rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .time-box {
+        min-width: 70px;
+        padding: 15px 10px;
+    }
+    .time-box span {
+        font-size: 2rem;
+    }
+}
